@@ -1,0 +1,21 @@
+[user]
+	email = nicky@qcode.co.uk
+[diff]
+	tool = /usr/local/bin/git_extDiff.sh
+	external = /usr/local/bin/git_extDiff.sh
+[difftool]
+	prompt = false
+[merge]
+	tool = meld
+[mergetool]
+	prompt = false
+[alias]
+	unstage = reset HEAD --
+        undo-commit = git reset --soft 'HEAD^'
+	co = checkout
+	st = status
+        lg = log --oneline --decorate
+[color]
+	ui = true
+[core]
+	editor = emacs
