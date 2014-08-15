@@ -1,5 +1,5 @@
-Test test test
+Nicky's configurations for things like:
 
-More test - from testbranch
-
-Here's another line added to satisfy the requirements.
+	- Bash
+	- Emacs
+	- ...
