@@ -25,7 +25,12 @@
  '(mode-line ((t (:background "gray30" :foreground "white" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((default (:inherit mode-line)) (((class color) (min-colors 88) (background light)) (:background "grey50" :foreground "grey90" :box (:line-width -1 :color "grey75") :weight light))))
  '(region ((((class color) (min-colors 88) (background light)) (:background "SteelBlue3" :foreground "White")))))
-(global-linum-mode 1)
+
+   ;; cl-lib
+(add-to-list 'load-path "/home/nick/.emacs.d/cl-lib/")
+(require 'cl-lib)
+
+   ;; Auto-Complete-Mode addition
 (add-to-list 'load-path "/home/nick/.emacs.d/")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "/home/nick/.emacs.d//ac-dict")
@@ -36,6 +41,25 @@
                        (if (not (minibufferp (current-buffer)))
                            (auto-complete-mode 1))
                        ))
+
+;; AutoPair addition
+;; (add-to-list 'load-path "/path/to/autopair") ;; comment if autopair.el is in standard load path 
+;;(require 'autopair)
+;;(autopair-global-mode) ;; enable autopair in all buffers
+
+;; Other settings
+(global-linum-mode 1)
 (real-global-auto-complete-mode t)
 (global-set-key (kbd "C-c C-c") 'comment-region)
-(global-auto-revert-mode 1)
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-auto-revert-mode t)
+(tool-bar-mode -1)
+(global-visual-line-mode t)
+
+;; Dash addition (required for smartparens)
+(add-to-list 'load-path "/home/nick/.emacs.d/dash")
+
+;; Smartparens addition
+(add-to-list 'load-path "/home/nick/.emacs.d/smartparens")
+(require 'smartparens)
+(smartparens-global-mode 1)
