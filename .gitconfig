@@ -1,8 +1,7 @@
 [user]
 	email = nicky@qcode.co.uk
 [diff]
-	tool = /usr/local/bin/git_extDiff.sh
-	external = /usr/local/bin/git_extDiff.sh
+	tool = meld
 [difftool]
 	prompt = false
 [merge]
@@ -19,3 +18,5 @@
 	ui = true
 [core]
 	editor = emacs
+[push]
+	default = current
